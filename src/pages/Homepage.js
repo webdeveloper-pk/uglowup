@@ -8,6 +8,7 @@ import ClientSection from "../components/ClientSection";
 import Contact from "../components/Contact";
 import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
+import Testimonials from "../components/Testimonials";
 
 const Homepage = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ const Homepage = () => {
         <Services />
         <Portfolio />
         <ClientSection />
+        <Testimonials />
         <Contact />
         <FooterHomepage />
       </div>
