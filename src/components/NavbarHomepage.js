@@ -88,17 +88,17 @@ const NavbarHomepage = () => {
               <div className="flex flex-col justify-center items-center h-[80vh] lg:h-[100%]">
                 <ul className="flex justify-center items-center gap-x-0 uppercase text-[14px]">
                   <li>
-                    <a href="/">
+                    <a href="#/">
                       <div className="btn-test from-bottom">About</div>
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="#services">
                       <div className="btn-test from-bottom">service</div>
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="#contact">
                       <div className="btn-test from-bottom">contact</div>
                     </a>
                   </li>
@@ -183,13 +183,25 @@ const NavbarHomepage = () => {
               >
                 <div className="flex flex-col justify-center items-center h-[80vh] lg:h-[100%]">
                   <ul className="flex flex-col justify-center items-center gap-y-8 uppercase">
-                    <li>About</li>
-                    <li>service</li>
-                    <li>contact</li>
+                    <li>
+                      <a href="#/" onClick={() => setNavbar(!navbar)}>
+                        About
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#services" onClick={() => setNavbar(!navbar)}>
+                        service
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" onClick={() => setNavbar(!navbar)}>
+                        contact
+                      </a>
+                    </li>
                     <li className="border-b border-white w-[20px]"></li>
                     <li className="flex items-center justify-center gap-x-4">
                       <span>eng</span>
-                      <img src={flag} alt="flag" />
+                      <img src={flag} alt="flag" width="25px" />
                     </li>
                   </ul>
                 </div>

@@ -3,7 +3,10 @@ import React from "react";
 const Contact = () => {
   return (
     <div>
-      <div className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto text-center">
+      <div
+        className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto text-center"
+        id="contact"
+      >
         <div className="flex flex-row justify-center text-center text-light-green text-3xl md:text-4xl lg:text-[40px] uppercase mb-12 md:mb-16">
           <h1 classNmae="uppercase">contact us</h1>
         </div>

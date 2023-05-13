@@ -1,11 +1,11 @@
 import React from "react";
-import plus from "../assets/images/hero-plus.png";
+import plus from "../assets/images/crossline.png";
 
 const Services = () => {
   return (
-    <div>
+    <div id="services">
       <div className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
-        <div className="flex items-start gap-x-8">
+        <div className="flex items-start gap-x-8 h-[500px] overflow-auto">
           <div className="hidden md:block">
             <img src={plus} alt="plus-icon" width="100px" />
           </div>
