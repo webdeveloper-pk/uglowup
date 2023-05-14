@@ -27,7 +27,10 @@ const ClientSection = () => {
         <div className="flex flex-row justify-center text-center text-3xl md:text-4xl lg:text-[40px] uppercase">
           <h1 classNmae="uppercase">our clients</h1>
         </div>
-        <div className="py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 lg:gap-x-12 gap-y-12 lg:gap-y-16">
+        <div
+          className="py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 lg:gap-x-12 gap-y-12 lg:gap-y-16"
+          data-aos="zoom-out"
+        >
           <div className="power-card-wrapper flex justify-center items-center">
             <img src={adidas} alt="adidas" className="w-[90px] h-auto" />
           </div>

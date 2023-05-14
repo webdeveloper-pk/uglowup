@@ -6,12 +6,15 @@ const Services = () => {
     <div id="services">
       <div className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
         <div className="flex items-start gap-x-8 h-[500px] overflow-auto">
-          <div className="hidden md:block">
+          <div className="hidden md:block" data-aos="fade-right">
             <img src={plus} alt="plus-icon" width="100px" />
           </div>
           {/* main div */}
           <div className="flex flex-col md:flex-row gap-y-12 justify-between items-start gap-x-8 md:gap-x-12 lg:gap-x-24">
-            <div className="flex flex-col gap-y-4 uppercase text-[20px] lg:text-[30px]">
+            <div
+              className="flex flex-col gap-y-4 uppercase text-[20px] lg:text-[30px]"
+              data-aos="fade-right"
+            >
               <a href="#innovations" className="sidebar-heading">
                 innovations
               </a>

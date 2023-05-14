@@ -14,7 +14,7 @@ const Portfolio = () => {
           <h1 classNmae="uppercase">portfolio</h1>
         </div>
         <div className="pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <div className="image-container">
+          <div className="image-container" data-aos="fade-right">
             <img src={portfolio1} alt="portfolio1" className="image" />
             <div className="overlay">
               <p className="project-name text-[16px] md:text-[24px] font-bold">
@@ -25,7 +25,7 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="image-container">
+          <div className="image-container" data-aos="zoom-in">
             <img src={portfolio2} alt="portfolio2" className="image" />
             <div className="overlay">
               <p className="project-name text-[16px] md:text-[24px] font-bold">
@@ -36,7 +36,7 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="image-container">
+          <div className="image-container" data-aos="fade-left">
             <img src={portfolio3} alt="portfolio3" className="image" />
             <div className="overlay">
               <p className="project-name text-[16px] md:text-[24px] font-bold">
@@ -47,7 +47,7 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="image-container">
+          <div className="image-container" data-aos="fade-right">
             <img src={portfolio4} alt="portfolio4" className="image" />
             <div className="overlay">
               <p className="project-name text-[16px] md:text-[24px] font-bold">
@@ -58,7 +58,7 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="image-container">
+          <div className="image-container" data-aos="zoom-in">
             <img src={portfolio5} alt="portfolio5" className="image" />
             <div className="overlay">
               <p className="project-name text-[16px] md:text-[24px] font-bold">
@@ -69,7 +69,7 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="image-container">
+          <div className="image-container" data-aos="fade-left">
             <img src={portfolio6} alt="portfolio6" className="image" />
             <div className="overlay">
               <p className="project-name text-[16px] md:text-[24px] font-bold">

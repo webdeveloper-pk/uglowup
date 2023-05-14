@@ -21,13 +21,14 @@ const NavbarHomepage = () => {
 
   return (
     <div>
-      <header className="hidden lg:block w-full z-[999] text-white px-6 md:px-12 lg:px-12 mx-auto">
+      <header className="hidden lg:block w-full z-[999] text-white px-6 md:px-12 lg:px-16 mx-auto">
         <div className="mx-auto lg:flex justify-between ">
           <div>
             <div className="flex flex-row justify-between items-center w-full">
               <div
                 className="flex items-center uppercase text-white text-base xl:text-[22px] font-bold"
                 style={{ fontWeight: "700" }}
+                data-aos="fade-down"
               >
                 <a href="/">
                   <div className="mr-4">
@@ -86,7 +87,10 @@ const NavbarHomepage = () => {
               }`}
             >
               <div className="flex flex-col justify-center items-center h-[80vh] lg:h-[100%]">
-                <ul className="flex justify-center items-center gap-x-0 uppercase text-[14px]">
+                <ul
+                  className="flex justify-center items-center gap-x-0 uppercase text-[14px]"
+                  data-aos="fade-down"
+                >
                   <li>
                     <a href="#/">
                       <div className="btn-test from-bottom">About</div>
@@ -177,12 +181,12 @@ const NavbarHomepage = () => {
             </div>
             <div>
               <div
-                className={`flex justify-center items-center pb-6 lg:pb-0 lg:block ${
+                className={`flex justify-center items-center lg:pb-0 lg:block ${
                   navbar ? "block" : "hidden"
                 }`}
               >
-                <div className="flex flex-col justify-center items-center h-[80vh] lg:h-[100%]">
-                  <ul className="flex flex-col justify-center items-center gap-y-8 uppercase">
+                <div className="flex flex-col justify-center items-center h-[50vh] lg:h-[100%]">
+                  <ul className="flex flex-col justify-center items-center gap-y-6 uppercase">
                     <li>
                       <a href="#/" onClick={() => setNavbar(!navbar)}>
                         About

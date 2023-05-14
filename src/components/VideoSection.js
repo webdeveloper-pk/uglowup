@@ -75,7 +75,10 @@ const VideoSection = () => {
           )}
         </div>
       </div> */}
-      <div className="px-6 md:px-12 lg:px-16 py-16 homepage-container mx-auto">
+      <div
+        className="px-6 md:px-12 lg:px-16 py-16 homepage-container mx-auto"
+        data-aos="zoom-in"
+      >
         <img
           src={videoImage}
           alt="video"

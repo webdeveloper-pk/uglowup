@@ -11,7 +11,10 @@ const Footer = () => {
             <img src={line} alt="line" />
           </div>
           <div className="pt-12 pb-12 md:pb-20 flex items-center md:items-start flex-col md:flex-row justify-between gap-y-12 text-light-white text-xs">
-            <div className="flex flex-col gap-y-8 text-center md:text-left">
+            <div
+              className="flex flex-col gap-y-8 text-center md:text-left"
+              data-aos="fade-right"
+            >
               <div>
                 <img src={logo} alt="logo" className="w-[180px] h-auto" />
               </div>
@@ -31,7 +34,10 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex justify-center gap-x-8 md:gap-x-12 xl:gap-x-16 items-center md:mt-2">
+            <div
+              className="flex justify-center gap-x-8 md:gap-x-12 xl:gap-x-16 items-center md:mt-2"
+              data-aos="fade-left"
+            >
               <a href="/">
                 <i className="fa-brands fa-facebook-f text-[18px] md:text-[20px] xl:text-[24px] custom-hover"></i>
               </a>
