@@ -1,28 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import ContactStep1 from "./ContactStep1";
+import ContactStep2 from "./ContactStep2";
+import ContactStep3 from "./ContactStep3";
+import ContactStep4 from "./ContactStep4";
+
 // import "antd/dist/antd.css";
+
 // import { Checkbox } from "antd";
 
 const Contact = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const handleNextStep = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
+  const handleBackStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
+
+  const renderComponent = () => {
+    switch (currentStep) {
+      case 1:
+        return <ContactStep1 onNextStep={handleNextStep} />;
+      case 2:
+        return <ContactStep2 onNextStep={handleNextStep} />;
+      case 3:
+        return (
+          <ContactStep3
+            onNextStep={handleNextStep}
+            onBackStep={handleBackStep}
+          />
+        );
+      case 4:
+        return <ContactStep4 />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div>
       <div
         className="text-light-white px-6 md:px-12 lg:px-16 pt-12 md:pt-4 lg:pt-12 xl:pt-20 pb-12 md:pb-24 homepage-container mx-auto text-center"
         id="contact"
       >
-        <div className="flex flex-row justify-center text-center text-light-green text-3xl md:text-4xl lg:text-[40px] uppercase mb-12 md:mb-16">
-          <h1 classNmae="uppercase">contact us</h1>
-        </div>
-        <p className="w-[100%] md:w-[90%] xl:w-[60%] mx-auto text-sm md:text-base md:text-[18px] text-light-white">
-          We’d love to chat to you and see how we can help so we've built this
-          from the help make sure we're putting you in contact with the right
-          team.Don't worry - it will only ake around 4 minutes of your time.
-          (We'ev timed it).
-        </p>
-        <div className="mt-8 md:mt-12">
-          <button className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3">
-            start
-          </button>
-        </div>
+        {renderComponent()}
       </div>
     </div>
   );
