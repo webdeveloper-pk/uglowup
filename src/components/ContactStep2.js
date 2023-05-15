@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ContactStep2 = ({ onNextStep }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleNextStep = () => {
+    onNextStep();
+  };
+
   return (
     <div>
       <div
@@ -23,10 +33,12 @@ const ContactStep2 = ({ onNextStep }) => {
           <input
             placeholder="Start typing"
             className="w-[100%] md:w-[350px] md:w-[400px] custom-input"
+            value={inputValue}
+            onChange={handleInputChange}
           />
           <div className="mt-8 md:mt-12">
             <button
-              onClick={onNextStep}
+              onClick={handleNextStep}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
               Next

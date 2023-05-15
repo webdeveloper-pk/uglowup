@@ -29,10 +29,6 @@ const ContactStep3 = ({ onNextStep, onBackStep }) => {
     return isChecked ? { backgroundColor: "white", borderColor: "black" } : {};
   };
 
-  //   const handleButtonClick = () => {
-  //     console.log(checkboxValues);
-  //   };
-
   return (
     <div>
       <div
