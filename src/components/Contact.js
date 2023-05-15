@@ -4,10 +4,6 @@ import ContactStep2 from "./ContactStep2";
 import ContactStep3 from "./ContactStep3";
 import ContactStep4 from "./ContactStep4";
 
-// import "antd/dist/antd.css";
-
-// import { Checkbox } from "antd";
-
 const Contact = () => {
   const [currentStep, setCurrentStep] = useState(1);
 

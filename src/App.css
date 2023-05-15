@@ -251,42 +251,35 @@ header {
   padding: 3px;
 }
 
-.custom-input:active {
-  border: none;
-  background-color: #000000;
-  border-bottom: 1px solid #f2f2f2;
-  padding: 3px;
-}
-
-.custom-checkbox {
-  border: 1px solid #00ffb0;
-  padding: 10px 10px;
-  color: #00ffb0;
-}
-
-.custom-inner-checkbox {
-  /* Hide the default checkbox appearance */
+/* Default checkbox styles */
+input[type="checkbox"] {
+  /* Hide the default checkbox */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  /* Define the size of the custom checkbox */
+  /* Create a square checkbox */
   width: 16px;
   height: 16px;
-  /* Add custom background and border styles */
-  background-color: #353839;
-  border: 1px solid #353839;
-  /* Add custom checked and hover styles */
+  border: 2px solid #232b2b;
+  background-color: #232b2b;
+  position: relative;
 }
 
-.custom-inner-checkbox:checked {
-  /* Change the background color when checked */
-  color: white;
+input[type="checkbox"]:checked {
+  /* Change the background color */
+  background-color: white;
+  border: 2px solid #232b2b;
 }
 
-.custom-inner-checkbox:hover {
-  /* Change the background color on hover */
-  background-color: #00ffb0;
-  cursor: pointer;
+/* Custom checkmark */
+input[type="checkbox"]:checked::before {
+  content: "\2713"; /* Unicode character for checkmark */
+  font-size: 14px;
+  color: black; /* Color of the checkmark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* footer */
@@ -343,35 +336,4 @@ header {
 .custom-hover:hover {
   cursor: pointer;
   color: #00ffb0;
-}
-
-/* Default checkbox styles */
-input[type="checkbox"] {
-  /* Hide the default checkbox */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  /* Create a square checkbox */
-  width: 16px;
-  height: 16px;
-  border: 2px solid #232b2b;
-  background-color: #232b2b;
-  position: relative;
-}
-
-input[type="checkbox"]:checked {
-  /* Change the background color */
-  background-color: white;
-  border: 2px solid #232b2b;
-}
-
-/* Custom checkmark */
-input[type="checkbox"]:checked::before {
-  content: "\2713"; /* Unicode character for checkmark */
-  font-size: 14px;
-  color: black; /* Color of the checkmark */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
