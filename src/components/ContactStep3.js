@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-const ContactStep3 = ({ onNextStep, onBackStep }) => {
+const ContactStep3 = ({ onNextStep, onBackStep, value }) => {
   const [checkboxValues, setCheckboxValues] = useState({
     agencyservice: false,
-    vendors: false,
-    media: false,
     career: false,
-    metaliica: false,
-    influencer: false,
     eCommerce: false,
+    vendors: false,
+    metaliica: false,
     brand: false,
+    media: false,
+    influencer: false,
     other: false,
   });
 
@@ -19,6 +19,50 @@ const ContactStep3 = ({ onNextStep, onBackStep }) => {
       ...prevState,
       [name]: checked,
     }));
+  };
+
+  const onSubmitdata = (event) => {
+    onNextStep(event);
+
+    // api code
+    const url =
+      "https://uglowup-dot-sucess-fund-trader.ew.r.appspot.com/api/v1/contact_us/";
+    const data = {
+      message: value,
+      help_options: [
+        {
+          option_1:
+            checkboxValues.agencyservice === true ? "Agent services" : "",
+          option_2:
+            checkboxValues.career === true ? "Career Opportunities" : "",
+          option_3: checkboxValues.eCommerce === true ? "eCommerce / DT" : "",
+          option_4:
+            checkboxValues.vendors === true ? "Vendors & Partnerships" : "",
+          option_5: checkboxValues.metaliica === true ? "I love Metaliica" : "",
+          option_6: checkboxValues.brand === true ? "Personal Branding" : "",
+          option_7: checkboxValues.media === true ? "Media or Press" : "",
+          option_8:
+            checkboxValues.influencer === true ? "Influencer Services" : "",
+          option_9: checkboxValues.other === true ? "Other" : "",
+        },
+      ],
+    };
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        // Handle the response data
+        console.log(responseData);
+      })
+      .catch((error) => {
+        // Handle the error
+        console.error(error);
+      });
   };
 
   const getLabelStyle = (isChecked) => {
@@ -38,7 +82,13 @@ const ContactStep3 = ({ onNextStep, onBackStep }) => {
         <div className="flex flex-row justify-center text-center text-light-green text-3xl md:text-4xl lg:text-[40px] uppercase mb-12 md:mb-16">
           <h1 classNmae="uppercase">contact us</h1>
         </div>
-        <p className="w-[100%] md:w-[90%] xl:w-[60%] mx-auto text-base md:text-[18px] text-light-white mb-6">
+        <div class="mb-6 h-1 w-full bg-lighter-white">
+          <div class="h-1 bg-light-green w-[100%]"></div>
+          <p className="text-left uppercase mt-2 text-lighter-white">
+            progress
+          </p>
+        </div>
+        <p className="w-[100%] md:w-[90%] xl:w-[60%] mx-auto text-base md:text-[18px] text-light-white mb-6 mt-12">
           <span className="pr-6">2.</span>What can we help you with?
           <span className="pl-4">*</span>
         </p>
@@ -158,13 +208,13 @@ const ContactStep3 = ({ onNextStep, onBackStep }) => {
 
           <div className="mt-8 md:mt-12 flex flex-col md:flex-row justify-center items-center gap-x-6 gap-y-6 ">
             <button
-              onClick={onBackStep}
+              onClick={(event) => onBackStep(event)}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
               back
             </button>
             <button
-              onClick={onNextStep}
+              onClick={onSubmitdata}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
               next

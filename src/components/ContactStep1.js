@@ -18,7 +18,7 @@ const ContactStep1 = ({ onNextStep }) => {
         </p>
         <div className="mt-8 md:mt-12">
           <button
-            onClick={onNextStep}
+            onClick={(event) => onNextStep(event)}
             className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
           >
             start

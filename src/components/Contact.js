@@ -6,13 +6,24 @@ import ContactStep4 from "./ContactStep4";
 
 const Contact = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [value, setValue] = useState("");
 
-  const handleNextStep = () => {
-    setCurrentStep(currentStep + 1);
+  const handleNextStep = (event) => {
+    event.preventDefault();
+    setTimeout(() => {
+      setCurrentStep((prevStep) => prevStep + 1);
+    }, 300);
   };
 
-  const handleBackStep = () => {
-    setCurrentStep(currentStep - 1);
+  const handleBackStep = (event) => {
+    event.preventDefault();
+    setTimeout(() => {
+      setCurrentStep((prevStep) => prevStep - 1);
+    }, 300);
+  };
+
+  const handleValueChange = (newValue) => {
+    setValue(newValue); // Update the value state
   };
 
   const renderComponent = () => {
@@ -20,12 +31,18 @@ const Contact = () => {
       case 1:
         return <ContactStep1 onNextStep={handleNextStep} />;
       case 2:
-        return <ContactStep2 onNextStep={handleNextStep} />;
+        return (
+          <ContactStep2
+            onNextStep={handleNextStep}
+            onValueChange={handleValueChange}
+          />
+        );
       case 3:
         return (
           <ContactStep3
             onNextStep={handleNextStep}
             onBackStep={handleBackStep}
+            value={value}
           />
         );
       case 4:
