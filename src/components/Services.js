@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <div id="services">
       <div className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
-        <div className="flex items-start gap-x-8 h-[500px] overflow-auto">
+        <div className="flex items-start gap-x-8">
           <div className="hidden md:block" data-aos="fade-right">
             <img src={plus} alt="plus-icon" width="100px" />
           </div>
@@ -28,7 +28,7 @@ const Services = () => {
                 guidance
               </a>
             </div>
-            <div className="">
+            <div className="h-[500px] overflow-auto">
               <div id="innovations">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
                   curiosity unleached

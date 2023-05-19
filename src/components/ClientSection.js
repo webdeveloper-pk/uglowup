@@ -25,7 +25,13 @@ const ClientSection = () => {
     <div className="bg-light-white">
       <div className="text-light-black px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
         <div className="flex flex-row justify-center text-center text-3xl md:text-4xl lg:text-[40px] uppercase">
-          <h1 classNmae="uppercase">our clients</h1>
+          <h1 classNmae="uppercase">
+            We’re grateful to work with
+            <br />
+            <div className="mt-0 md:mt-2">
+              <em className="animated">incredible clients.</em>
+            </div>
+          </h1>
         </div>
         <div
           className="py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 lg:gap-x-12 gap-y-12 lg:gap-y-16"

@@ -45,14 +45,14 @@ const SimpleSlider = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <Slider {...settings}>
         <div className="px-4">
           <div className="md:pl-44 flex justify-end" data-aos="zoom-in">
             <img
               src={testimonial1}
               alt=""
-              className="w-[100%] lg:w-[90%] h-[100%]"
+              className="w-[100%] lg:w-[90%] h-[100%] object-cover"
             />
           </div>
           <div

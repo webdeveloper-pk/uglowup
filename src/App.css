@@ -337,3 +337,11 @@ input[type="checkbox"]:checked::before {
   cursor: pointer;
   color: #00ffb0;
 }
+
+.animated {
+  background-image: linear-gradient(to right, #27ccc0 0, #27ccc0 100%);
+  background-size: 100% 28%;
+  background-position: left 90%;
+  background-repeat: no-repeat;
+  font-style: normal;
+}
