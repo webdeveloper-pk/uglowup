@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import plus from "../assets/images/crossline.png";
 
 const Services = () => {
+  const [activeMenuItem, setActiveMenuItem] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const innovationsSection = document.getElementById("innovations");
+      const plateformsSection = document.getElementById("plateforms");
+      const strategySection = document.getElementById("strategy");
+      const guidanceSection = document.getElementById("guidance");
+
+      if (
+        scrollPosition >= innovationsSection.offsetTop &&
+        scrollPosition < plateformsSection.offsetTop
+      ) {
+        setActiveMenuItem("innovations");
+      } else if (
+        scrollPosition >= plateformsSection.offsetTop &&
+        scrollPosition < strategySection.offsetTop
+      ) {
+        setActiveMenuItem("plateforms");
+      } else if (
+        scrollPosition >= strategySection.offsetTop &&
+        scrollPosition < guidanceSection.offsetTop
+      ) {
+        setActiveMenuItem("strategy");
+      } else if (scrollPosition >= guidanceSection.offsetTop) {
+        setActiveMenuItem("guidance");
+      } else {
+        setActiveMenuItem("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div id="services">
       <div className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
@@ -12,25 +50,45 @@ const Services = () => {
           {/* main div */}
           <div className="flex flex-col md:flex-row gap-y-12 justify-between items-start gap-x-8 md:gap-x-12 lg:gap-x-24">
             <div
-              className="flex flex-col gap-y-4 uppercase text-[20px] lg:text-[30px]"
+              className="flex flex-col gap-y-4 uppercase text-[20px] lg:text-[30px] menu-fixed"
               data-aos="fade-right"
             >
-              <a href="#innovations" className="sidebar-heading">
+              <a
+                href="#innovations"
+                className={`sidebar-heading ${
+                  activeMenuItem === "innovations" ? "active" : ""
+                }`}
+              >
                 innovations
               </a>
-              <a href="#plateforms" className="sidebar-heading">
+              <a
+                href="#plateforms"
+                className={`sidebar-heading ${
+                  activeMenuItem === "plateforms" ? "active" : ""
+                }`}
+              >
                 plateforms
               </a>
-              <a href="#stretgy" className="sidebar-heading">
+              <a
+                href="#stretgy"
+                className={`sidebar-heading ${
+                  activeMenuItem === "strategy" ? "active" : ""
+                }`}
+              >
                 strategy
               </a>
-              <a href="#guidance" className="sidebar-heading">
+              <a
+                href="#guidance"
+                className={`sidebar-heading ${
+                  activeMenuItem === "guidance" ? "active" : ""
+                }`}
+              >
                 guidance
               </a>
             </div>
-            <div className="h-[500px] overflow-auto">
+            <div className="h-[400px] overflow-auto">
               <div id="innovations">
-                <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
+                <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6 ">
                   curiosity unleached
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
@@ -60,7 +118,7 @@ const Services = () => {
               </div>
               <div id="plateforms" className="mt-[80px] lg:mt-[150px]">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                  business outcomes, not potential react
+                  Business outcomes. Not potential reach.
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -89,7 +147,7 @@ const Services = () => {
               </div>
               <div id="stretgy" className="mt-[80px] lg:mt-[150px]">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                  curiosity unleached
+                  We’re about people
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -118,7 +176,7 @@ const Services = () => {
               </div>
               <div id="guidance" className="mt-[80px] lg:mt-[150px]">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                  business outcomes, not potential react
+                  Borrow our brains
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.

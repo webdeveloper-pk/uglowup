@@ -192,13 +192,14 @@ header {
   color: #f2f2f2;
 }
 
+/* 
 .sidebar-heading:hover {
   color: #00ffb0;
 }
 
 .sidebar-heading:focus {
   color: #00ffb0;
-}
+} */
 
 /* portfolio section */
 
@@ -344,4 +345,8 @@ input[type="checkbox"]:checked::before {
   background-position: left 90%;
   background-repeat: no-repeat;
   font-style: normal;
+}
+
+.active {
+  color: #00ffb0; /* Change to your desired color */
 }
