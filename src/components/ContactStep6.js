@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 
-const ContactStep2 = ({
-  onNextStep,
-  onBackStep,
-  email,
-  phone,
-  onValueChange,
-}) => {
-  const [value, setValue] = useState("");
+const ContactStep6 = ({ onNextStep, onBackStep, email, onPhoneChange }) => {
+  const [phone, setPhone] = useState("");
 
   const handleChange = (event) => {
-    const newValue = event.target.value;
-    setValue(newValue);
-    onValueChange(newValue); // Call the prop function with the new value
+    const newPhone = event.target.value;
+    setPhone(newPhone);
+    onPhoneChange(newPhone); // Call the prop function with the new value
   };
 
   const handleNextStep = (event) => {
@@ -29,25 +23,22 @@ const ContactStep2 = ({
           <h1 classNmae="uppercase">contact us</h1>
         </div>
         <div class="mb-6 h-1 w-full bg-lighter-white">
-          <div class="h-1 bg-light-green w-[75%]"></div>
+          <div class="h-1 bg-light-green w-[50%]"></div>
           <p className="text-left uppercase mt-2 text-lighter-white">
             progress
           </p>
         </div>
         <div className="text-center mt-12">
           <p className="w-[100%] mx-auto text-base md:text-[20px] text-light-white">
-            <span className="pr-6">3.</span>Befor we get started, Let's give
-            your message a subject line. <span className="pl-2">*</span>
-          </p>
-          <p className="text-lighter-white text-xs md:text-sm mt-3 mb-8">
-            In 100 characters or less, how can we best help you?
+            <span className="pr-6">2.</span>Enter your contact no.{" "}
+            <span className="pl-2">*</span>
           </p>
         </div>
-        <form className="mt-3">
+        <form className="mt-10">
           <input
-            placeholder="Start typing"
+            placeholder="Contact no here"
             className="w-[100%] md:w-[350px] md:w-[400px] custom-input"
-            value={value}
+            value={phone}
             onChange={handleChange}
           />
           <div className="mt-8 md:mt-12 flex flex-col md:flex-row justify-center items-center gap-x-6 gap-y-6 ">
@@ -70,4 +61,4 @@ const ContactStep2 = ({
   );
 };
 
-export default ContactStep2;
+export default ContactStep6;

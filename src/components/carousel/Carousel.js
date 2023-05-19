@@ -68,10 +68,7 @@ const SimpleSlider = () => {
               mollis turpis at euismod mole stienu particularus.{" "}
             </p>
           </div>
-          <p
-            className="text-lg md:text-[24px] text-light-white lg:ml-8"
-            data-aos="fade-right"
-          >
+          <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
@@ -97,10 +94,7 @@ const SimpleSlider = () => {
               mollis turpis at euismod mole stienu particularus.{" "}
             </p>
           </div>
-          <p
-            className="text-lg md:text-[24px] text-light-white lg:ml-8"
-            data-aos="fade-right"
-          >
+          <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
@@ -126,10 +120,7 @@ const SimpleSlider = () => {
               mollis turpis at euismod mole stienu particularus.{" "}
             </p>
           </div>
-          <p
-            className="text-lg md:text-[24px] text-light-white lg:ml-8"
-            data-aos="fade-right"
-          >
+          <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
@@ -155,10 +146,7 @@ const SimpleSlider = () => {
               mollis turpis at euismod mole stienu particularus.{" "}
             </p>
           </div>
-          <p
-            className="text-lg md:text-[24px] text-light-white lg:ml-8"
-            data-aos="fade-right"
-          >
+          <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
@@ -184,10 +172,7 @@ const SimpleSlider = () => {
               mollis turpis at euismod mole stienu particularus.{" "}
             </p>
           </div>
-          <p
-            className="text-lg md:text-[24px] text-light-white lg:ml-8"
-            data-aos="fade-right"
-          >
+          <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>

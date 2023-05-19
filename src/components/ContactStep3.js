@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ContactStep3 = ({ onNextStep, onBackStep, value }) => {
+const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
   const [checkboxValues, setCheckboxValues] = useState({
     agencyservice: false,
     career: false,
@@ -29,6 +29,8 @@ const ContactStep3 = ({ onNextStep, onBackStep, value }) => {
       "https://uglowup-dot-sucess-fund-trader.ew.r.appspot.com/api/v1/contact_us/";
     const data = {
       message: value,
+      email: email,
+      phone_number: phone,
       help_options: [
         {
           option_1:
@@ -89,7 +91,7 @@ const ContactStep3 = ({ onNextStep, onBackStep, value }) => {
           </p>
         </div>
         <p className="w-[100%] md:w-[90%] xl:w-[60%] mx-auto text-base md:text-[18px] text-light-white mb-6 mt-12">
-          <span className="pr-6">2.</span>What can we help you with?
+          <span className="pr-6">4.</span>What can we help you with?
           <span className="pl-4">*</span>
         </p>
         <form>

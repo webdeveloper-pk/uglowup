@@ -3,10 +3,14 @@ import ContactStep1 from "./ContactStep1";
 import ContactStep2 from "./ContactStep2";
 import ContactStep3 from "./ContactStep3";
 import ContactStep4 from "./ContactStep4";
+import ContactStep5 from "./ContactStep5";
+import ContactStep6 from "./ContactStep6";
 
 const Contact = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [value, setValue] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleNextStep = (event) => {
     event.preventDefault();
@@ -26,26 +30,55 @@ const Contact = () => {
     setValue(newValue); // Update the value state
   };
 
+  const handleEmailChange = (newEmail) => {
+    setEmail(newEmail); // Update the value state
+  };
+
+  const handlePhoneChange = (newPhone) => {
+    setPhone(newPhone); // Update the value state
+  };
+
   const renderComponent = () => {
     switch (currentStep) {
       case 1:
         return <ContactStep1 onNextStep={handleNextStep} />;
       case 2:
         return (
-          <ContactStep2
+          <ContactStep5
             onNextStep={handleNextStep}
-            onValueChange={handleValueChange}
+            onEmailChange={handleEmailChange}
           />
         );
       case 3:
         return (
-          <ContactStep3
+          <ContactStep6
             onNextStep={handleNextStep}
             onBackStep={handleBackStep}
-            value={value}
+            email={email}
+            onPhoneChange={handlePhoneChange}
           />
         );
       case 4:
+        return (
+          <ContactStep2
+            onNextStep={handleNextStep}
+            onBackStep={handleBackStep}
+            email={email}
+            phone={phone}
+            onValueChange={handleValueChange}
+          />
+        );
+      case 5:
+        return (
+          <ContactStep3
+            onNextStep={handleNextStep}
+            onBackStep={handleBackStep}
+            email={email}
+            phone={phone}
+            value={value}
+          />
+        );
+      case 6:
         return <ContactStep4 />;
       default:
         return null;
