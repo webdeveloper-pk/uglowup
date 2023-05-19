@@ -45,18 +45,21 @@ const SimpleSlider = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <Slider {...settings}>
-        <div className="px-4">
-          <div className="md:pl-44 flex justify-end" data-aos="zoom-in">
+        <div className="md:px-4">
+          <div
+            className="md:pl-48 xl:pl-60 lg:pr-4 xl:pr-6 flex justify-end items-center"
+            data-aos="zoom-in"
+          >
             <img
               src={testimonial1}
-              alt=""
-              className="w-[100%] lg:w-[90%] h-[100%] object-cover"
+              alt="testimonial"
+              className="w-[100%] lg:w-[90%] h-[100%] md:max-h-[530px] lg:max-h-[370px] xl:max-h-[530px] 2xl:max-h-[700px] object-cover"
             />
           </div>
           <div
-            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white"
+            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
@@ -66,23 +69,26 @@ const SimpleSlider = () => {
             </p>
           </div>
           <p
-            className="text-lg md:text-[24px] text-light-white"
+            className="text-lg md:text-[24px] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
         </div>
-        <div className="px-4">
-          <div className="md:pl-44 flex justify-end" data-aos="zoom-in">
+        <div className="md:px-4">
+          <div
+            className="md:pl-48 xl:pl-60 lg:pr-4 xl:pr-6 flex justify-end items-center"
+            data-aos="zoom-in"
+          >
             <img
               src={testimonial1}
-              alt=""
-              className="w-[100%] lg:w-[90%] h-[100%]"
+              alt="testimonial"
+              className="w-[100%] lg:w-[90%] h-[100%] md:max-h-[530px] lg:max-h-[370px] xl:max-h-[530px] 2xl:max-h-[700px] object-cover"
             />
           </div>
           <div
-            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white"
+            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
@@ -92,23 +98,26 @@ const SimpleSlider = () => {
             </p>
           </div>
           <p
-            className="text-lg md:text-[24px] text-light-white"
+            className="text-lg md:text-[24px] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
         </div>
-        <div className="px-4">
-          <div className="md:pl-44 flex justify-end" data-aos="zoom-in">
+        <div className="md:px-4">
+          <div
+            className="md:pl-48 xl:pl-60 lg:pr-4 xl:pr-6 flex justify-end items-center"
+            data-aos="zoom-in"
+          >
             <img
               src={testimonial1}
-              alt=""
-              className="w-[100%] lg:w-[90%] h-[100%]"
+              alt="testimonial"
+              className="w-[100%] lg:w-[90%] h-[100%] md:max-h-[530px] lg:max-h-[370px] xl:max-h-[530px] 2xl:max-h-[700px] object-cover"
             />
           </div>
           <div
-            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white"
+            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
@@ -118,23 +127,26 @@ const SimpleSlider = () => {
             </p>
           </div>
           <p
-            className="text-lg md:text-[24px] text-light-white"
+            className="text-lg md:text-[24px] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
         </div>
-        <div className="px-4">
-          <div className="md:pl-44 flex justify-end" data-aos="zoom-in">
+        <div className="md:px-4">
+          <div
+            className="md:pl-48 xl:pl-60 lg:pr-4 xl:pr-6 flex justify-end items-center"
+            data-aos="zoom-in"
+          >
             <img
               src={testimonial1}
-              alt=""
-              className="w-[100%] lg:w-[90%] h-[100%]"
+              alt="testimonial"
+              className="w-[100%] lg:w-[90%] h-[100%] md:max-h-[530px] lg:max-h-[370px] xl:max-h-[530px] 2xl:max-h-[700px] object-cover"
             />
           </div>
           <div
-            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white"
+            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
@@ -144,23 +156,26 @@ const SimpleSlider = () => {
             </p>
           </div>
           <p
-            className="text-lg md:text-[24px] text-light-white"
+            className="text-lg md:text-[24px] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             JOE BLOGGS |
             <span className="pl-2 text-light-green">CEO PUBLICIS</span>
           </p>
         </div>
-        <div className="px-4">
-          <div className="md:pl-44 flex justify-end" data-aos="zoom-in">
+        <div className="md:px-4">
+          <div
+            className="md:pl-48 xl:pl-60 lg:pr-4 xl:pr-6 flex justify-end items-center"
+            data-aos="zoom-in"
+          >
             <img
               src={testimonial1}
-              alt=""
-              className="w-[100%] lg:w-[90%] h-[100%]"
+              alt="testimonial"
+              className="w-[100%] lg:w-[90%] h-[100%] md:max-h-[530px] lg:max-h-[370px] xl:max-h-[530px] 2xl:max-h-[700px] object-cover"
             />
           </div>
           <div
-            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white"
+            className="w-[100%] md:w-[70%]  lg:w-[60%] xl:w-[40%] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
@@ -170,7 +185,7 @@ const SimpleSlider = () => {
             </p>
           </div>
           <p
-            className="text-lg md:text-[24px] text-light-white"
+            className="text-lg md:text-[24px] text-light-white lg:ml-8"
             data-aos="fade-right"
           >
             JOE BLOGGS |

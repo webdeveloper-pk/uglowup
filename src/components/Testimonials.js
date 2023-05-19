@@ -8,7 +8,7 @@ const Testimonials = () => {
         <div className="flex flex-row justify-center text-center text-3xl md:text-4xl lg:text-[40px] uppercase text-light-green mb-16 md:mb-24">
           <h1 classNmae="uppercase">what people say about us</h1>
         </div>
-        <div className="w-[100%]">
+        <div>
           <SimpleSlider />
         </div>
       </div>

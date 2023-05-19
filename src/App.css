@@ -350,3 +350,5 @@ input[type="checkbox"]:checked::before {
 .active {
   color: #00ffb0; /* Change to your desired color */
 }
+
+/* sidebar */
