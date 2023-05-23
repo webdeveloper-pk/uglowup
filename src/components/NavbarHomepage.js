@@ -182,7 +182,7 @@ const NavbarHomepage = () => {
                             <div className="py-1" role="none">
                               <div
                                 href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
                                 role="menuitem"
                                 tabIndex="-1"
                                 id="menu-item-0"
@@ -194,7 +194,7 @@ const NavbarHomepage = () => {
                               </div>
                               <div
                                 href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
                                 role="menuitem"
                                 tabIndex="-1"
                                 id="menu-item-1"
