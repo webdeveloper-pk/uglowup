@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import plus from "../assets/images/crossline.png";
 
 const Services = ({ selectedLanguage }) => {
   const [activeMenuItem, setActiveMenuItem] = useState("");
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      const scrollPosition = contentRef.current.scrollTop;
       const innovationsSection = document.getElementById("innovations");
       const plateformsSection = document.getElementById("plateforms");
       const strategySection = document.getElementById("strategy");
       const guidanceSection = document.getElementById("guidance");
 
       if (
-        scrollPosition >= innovationsSection.offsetTop &&
-        scrollPosition < plateformsSection.offsetTop
+        scrollPosition >= innovationsSection.getBoundingClientRect().top &&
+        scrollPosition < plateformsSection.getBoundingClientRect().top
       ) {
         setActiveMenuItem("innovations");
       } else if (
-        scrollPosition >= plateformsSection.offsetTop &&
-        scrollPosition < strategySection.offsetTop
+        scrollPosition >= plateformsSection.getBoundingClientRect().top &&
+        scrollPosition < strategySection.getBoundingClientRect().top
       ) {
         setActiveMenuItem("plateforms");
       } else if (
-        scrollPosition >= strategySection.offsetTop &&
-        scrollPosition < guidanceSection.offsetTop
+        scrollPosition >= strategySection.getBoundingClientRect().top &&
+        scrollPosition < guidanceSection.getBoundingClientRect().top
       ) {
         setActiveMenuItem("strategy");
-      } else if (scrollPosition >= guidanceSection.offsetTop) {
+      } else if (
+        scrollPosition >= guidanceSection.getBoundingClientRect().top
+      ) {
         setActiveMenuItem("guidance");
       } else {
         setActiveMenuItem("");
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    contentRef.current.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      contentRef.current.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -86,8 +89,11 @@ const Services = ({ selectedLanguage }) => {
                 {selectedLanguage === "eng" ? "guidance" : "conseils"}
               </a>
             </div>
-            <div className="h-[400px] overflow-auto lg:pr-12 xl:pr-32">
-              <div id="innovations">
+            <div
+              className="h-[300px] overflow-auto lg:pr-12 xl:pr-32"
+              ref={contentRef}
+            >
+              <div id="innovations" setActiveMenuItem="innovations">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6 ">
                   {selectedLanguage === "eng"
                     ? "Unleashing the power of curiosity"
@@ -99,7 +105,11 @@ const Services = ({ selectedLanguage }) => {
                     : "Nous sommes devenus une plateforme narrative puissante qui place le consommateur au cœur de notre narration. Nous exploitons toute la force de notre créativité collective, y compris le client et l'agence, pour discerner ce qui résonne avec les consommateurs plutôt que de nous fier à la spéculation ou aux préjugés personnels. Le résultat? Des créations percutantes et efficaces basées sur les connaissances des consommateurs."}
                 </p>
               </div>
-              <div id="plateforms" className="mt-[80px] lg:mt-[150px]">
+              <div
+                id="plateforms"
+                className="mt-[80px] lg:mt-[150px]"
+                setActiveMenuItem="plateforms"
+              >
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
                   {selectedLanguage === "eng"
                     ? "Actual business results"
@@ -116,7 +126,11 @@ const Services = ({ selectedLanguage }) => {
                     : "Notre objectif est de comprendre et de maximiser l'attention des consommateurs, d'assurer la pertinence du contenu et de fournir des résultats démontrables."}
                 </p>
               </div>
-              <div id="stretgy" className="mt-[80px] lg:mt-[150px]">
+              <div
+                id="stretgy"
+                className="mt-[80px] lg:mt-[150px]"
+                setActiveMenuItem="stretgy"
+              >
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
                   {selectedLanguage === "eng"
                     ? "People are our priority"
@@ -128,7 +142,11 @@ const Services = ({ selectedLanguage }) => {
                     : "Nous plaçons les individus au centre de tous nos efforts, garantissant que nos concepts et stratégies sont culturellement diversifiés et orientés vers le consommateur. Nous abordons la stratégie avec un état d'esprit pragmatique, humble et empathique. Nous sommes convaincus que, dans le monde d'aujourd'hui, les marques ne peuvent pas se contenter d'un message générique destiné à un large public. Le moyen le plus puissant de favoriser la pertinence et la croissance est de communiquer de manière unique et spécifique avec les individus, en fonction de leur identité, par le biais d'une écoute et d'une compréhension actives."}
                 </p>
               </div>
-              <div id="guidance" className="mt-[80px] lg:mt-[150px]">
+              <div
+                id="guidance"
+                className="mt-[80px] lg:mt-[150px]"
+                setActiveMenuItem="guidance"
+              >
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
                   {selectedLanguage === "eng"
                     ? "Tap into our intellect"
