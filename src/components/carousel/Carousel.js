@@ -64,8 +64,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mollis turpis at euismod mole stienu particularus.{" "}
+              This team has exceeded expectations, transforming our marketing
+              strategy and delivering remarkable results. Their understanding of
+              our audience is exceptional.
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -90,8 +91,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mollis turpis at euismod mole stienu particularus.{" "}
+              This team has exceeded expectations, transforming our marketing
+              strategy and delivering remarkable results. Their understanding of
+              our audience is exceptional.
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -116,8 +118,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mollis turpis at euismod mole stienu particularus.{" "}
+              This team has exceeded expectations, transforming our marketing
+              strategy and delivering remarkable results. Their understanding of
+              our audience is exceptional.
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -142,8 +145,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mollis turpis at euismod mole stienu particularus.{" "}
+              This team has exceeded expectations, transforming our marketing
+              strategy and delivering remarkable results. Their understanding of
+              our audience is exceptional.
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -168,8 +172,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mollis turpis at euismod mole stienu particularus.{" "}
+              This team has exceeded expectations, transforming our marketing
+              strategy and delivering remarkable results. Their understanding of
+              our audience is exceptional.
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">

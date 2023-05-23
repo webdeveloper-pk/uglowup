@@ -1,214 +1,159 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import plus from "../assets/images/crossline.png";
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState("innovations");
-  const sectionRefs = {
-    innovations: useRef(null),
-    plateforms: useRef(null),
-    strategy: useRef(null),
-    guidance: useRef(null),
-  };
+  const [activeMenuItem, setActiveMenuItem] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
-      for (const [key, value] of Object.entries(sectionRefs)) {
-        const section = value.current;
-        if (
-          section &&
-          section.getBoundingClientRect().top <= window.innerHeight / 2
-        ) {
-          setActiveTab(key);
-        }
+      const scrollPosition = window.scrollY;
+      const innovationsSection = document.getElementById("innovations");
+      const plateformsSection = document.getElementById("plateforms");
+      const strategySection = document.getElementById("strategy");
+      const guidanceSection = document.getElementById("guidance");
+
+      if (
+        scrollPosition >= innovationsSection.offsetTop &&
+        scrollPosition < plateformsSection.offsetTop
+      ) {
+        setActiveMenuItem("innovations");
+      } else if (
+        scrollPosition >= plateformsSection.offsetTop &&
+        scrollPosition < strategySection.offsetTop
+      ) {
+        setActiveMenuItem("plateforms");
+      } else if (
+        scrollPosition >= strategySection.offsetTop &&
+        scrollPosition < guidanceSection.offsetTop
+      ) {
+        setActiveMenuItem("strategy");
+      } else if (scrollPosition >= guidanceSection.offsetTop) {
+        setActiveMenuItem("guidance");
+      } else {
+        setActiveMenuItem("");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-    // eslint-disable-next-line
   }, []);
-
-  const scrollToSection = (section) => {
-    const targetSection = sectionRefs[section].current;
-    if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div id="services">
       <div className="text-light-white px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
         <div className="flex items-start gap-x-8">
           <div className="hidden md:block" data-aos="fade-right">
-            <img src={plus} alt="plus-icon" width="40px" />
+            <img src={plus} alt="plus-icon" width="100px" />
           </div>
-          <div className="w-full flex flex-col md:flex-row gap-y-12 justify-between items-start gap-x-8 md:gap-x-12 lg:gap-x-24">
-            <div>
-              <div className="flex flex-col gap-y-4 uppercase text-[20px] lg:text-[30px]">
-                <p
-                  className={activeTab === "innovations" ? "active" : ""}
-                  onClick={() => scrollToSection("innovations")}
-                >
-                  innovations
-                </p>
-                <p
-                  className={activeTab === "plateforms" ? "active" : ""}
-                  onClick={() => scrollToSection("plateforms")}
-                >
-                  plateforms
-                </p>
-                <p
-                  className={activeTab === "strategy" ? "active" : ""}
-                  onClick={() => scrollToSection("strategy")}
-                >
-                  strategy
-                </p>
-                <p
-                  className={activeTab === "guidance" ? "active" : ""}
-                  onClick={() => scrollToSection("guidance")}
-                >
-                  guidance
+          {/* main div */}
+          <div className="flex flex-col md:flex-row gap-y-12 justify-between items-start gap-x-8 md:gap-x-12 lg:gap-x-24">
+            <div
+              className="flex flex-col gap-y-4 uppercase text-[20px] lg:text-[30px] menu-fixed"
+              data-aos="fade-right"
+            >
+              <a
+                href="#innovations"
+                className={`sidebar-heading ${
+                  activeMenuItem === "innovations" ? "active" : ""
+                }`}
+              >
+                innovations
+              </a>
+              <a
+                href="#plateforms"
+                className={`sidebar-heading ${
+                  activeMenuItem === "plateforms" ? "active" : ""
+                }`}
+              >
+                plateforms
+              </a>
+              <a
+                href="#stretgy"
+                className={`sidebar-heading ${
+                  activeMenuItem === "strategy" ? "active" : ""
+                }`}
+              >
+                strategy
+              </a>
+              <a
+                href="#guidance"
+                className={`sidebar-heading ${
+                  activeMenuItem === "guidance" ? "active" : ""
+                }`}
+              >
+                guidance
+              </a>
+            </div>
+            <div className="h-[400px] overflow-auto lg:pr-12 xl:pr-32">
+              <div id="innovations">
+                <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6 ">
+                  Unleashing the power of curiosity
+                </h1>
+                <p className="font-light text-xs lg:text-base text-light-white">
+                  We've become a potent narrative platform that puts the
+                  consumer at the heart of our storytelling. We harness the full
+                  strength of our collective creativity, including both client
+                  and agency, to discern what resonates with the consumers
+                  rather than relying on speculation or personal bias. The
+                  outcome? Impactful, effective creatives that are driven by
+                  consumer insights.
                 </p>
               </div>
-            </div>
-            <div
-              id="sections"
-              className="w-[100%] max-h-[500px] overflow-scroll"
-            >
-              <section ref={sectionRefs.innovations}>
-                <div>
-                  <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6 ">
-                    curiosity unleached
-                  </h1>
-                  <p className="font-light text-xs lg:text-base text-light-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mollis turpis at euismod molestie. Etiam vitae
-                    euismod nisi. Pellentesque a dolor diam. Nulla facilisi.
-                    Nullam neque quam, tempor at nibh in, accumsan sollicitudin
-                    nisi. Pellentesque nec sem at velit facilisis tristique. In
-                    hac habitasse plated dictumst. Proin finibus tellus nulla,
-                    in bibendum ex scelerisque sed. Etiam malesuada purus eget
-                    commodo sagittis. Vestibulum semper fermentum tristique. Sed
-                    malesuada ex eget fells eleifend rutrum. Integer augue elit,
-                    consectetur a nisi vulputate, mattis ornare fells.
-                  </p>
-                  <p className="mt-6 ont-light text-xs lg:text-base text-light-white">
-                    Maecenas porta id augue at cursus. Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Etiam varius quam non
-                    ipsum malesuada, eget mollis risus dapibus. Nullam ut
-                    malesuada dui, ac aliquam nulla. Cras ultrices nisi at eros
-                    consectetur, in rutrum metus interdum. Praesent aliquet
-                    ipsum ante, vitae commodo arcu maximus ornare. Ut quis
-                    malesuada urna. Quisque ac odio sed purus blandit fringilla.
-                    Etiam euismod tincidunt libero sed laoreet. Praesent tempor
-                    ex nec ullamcorper fringilla. Integer euismod tempus
-                    eleifend. Suspendisse pulvinar pharetra metus, in
-                    condimentum sem. Nunc
-                  </p>
-                </div>
-              </section>
-              <section ref={sectionRefs.plateforms}>
-                <div className="mt-[80px] lg:mt-[150px]">
-                  <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                    Business outcomes. Not potential reach.
-                  </h1>
-                  <p className="font-light text-xs lg:text-base text-light-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mollis turpis at euismod molestie. Etiam vitae
-                    euismod nisi. Pellentesque a dolor diam. Nulla facilisi.
-                    Nullam neque quam, tempor at nibh in, accumsan sollicitudin
-                    nisi. Pellentesque nec sem at velit facilisis tristique. In
-                    hac habitasse plated dictumst. Proin finibus tellus nulla,
-                    in bibendum ex scelerisque sed. Etiam malesuada purus eget
-                    commodo sagittis. Vestibulum semper fermentum tristique. Sed
-                    malesuada ex eget fells eleifend rutrum. Integer augue elit,
-                    consectetur a nisi vulputate, mattis ornare fells.
-                  </p>
-                  <p className="mt-6 ont-light text-xs lg:text-base text-light-white">
-                    Maecenas porta id augue at cursus. Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Etiam varius quam non
-                    ipsum malesuada, eget mollis risus dapibus. Nullam ut
-                    malesuada dui, ac aliquam nulla. Cras ultrices nisi at eros
-                    consectetur, in rutrum metus interdum. Praesent aliquet
-                    ipsum ante, vitae commodo arcu maximus ornare. Ut quis
-                    malesuada urna. Quisque ac odio sed purus blandit fringilla.
-                    Etiam euismod tincidunt libero sed laoreet. Praesent tempor
-                    ex nec ullamcorper fringilla. Integer euismod tempus
-                    eleifend. Suspendisse pulvinar pharetra metus, in
-                    condimentum sem. Nunc
-                  </p>
-                </div>
-              </section>
-              <section ref={sectionRefs.strategy}>
-                <div id="stretgy" className="mt-[80px] lg:mt-[150px]">
-                  <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                    We’re about people
-                  </h1>
-                  <p className="font-light text-xs lg:text-base text-light-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mollis turpis at euismod molestie. Etiam vitae
-                    euismod nisi. Pellentesque a dolor diam. Nulla facilisi.
-                    Nullam neque quam, tempor at nibh in, accumsan sollicitudin
-                    nisi. Pellentesque nec sem at velit facilisis tristique. In
-                    hac habitasse plated dictumst. Proin finibus tellus nulla,
-                    in bibendum ex scelerisque sed. Etiam malesuada purus eget
-                    commodo sagittis. Vestibulum semper fermentum tristique. Sed
-                    malesuada ex eget fells eleifend rutrum. Integer augue elit,
-                    consectetur a nisi vulputate, mattis ornare fells.
-                  </p>
-                  <p className="mt-6 ont-light text-xs lg:text-base text-light-white">
-                    Maecenas porta id augue at cursus. Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Etiam varius quam non
-                    ipsum malesuada, eget mollis risus dapibus. Nullam ut
-                    malesuada dui, ac aliquam nulla. Cras ultrices nisi at eros
-                    consectetur, in rutrum metus interdum. Praesent aliquet
-                    ipsum ante, vitae commodo arcu maximus ornare. Ut quis
-                    malesuada urna. Quisque ac odio sed purus blandit fringilla.
-                    Etiam euismod tincidunt libero sed laoreet. Praesent tempor
-                    ex nec ullamcorper fringilla. Integer euismod tempus
-                    eleifend. Suspendisse pulvinar pharetra metus, in
-                    condimentum sem. Nunc
-                  </p>
-                </div>
-              </section>
-              <section ref={sectionRefs.guidance}>
-                <div id="guidance" className="mt-[80px] lg:mt-[150px]">
-                  <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                    Borrow our brains
-                  </h1>
-                  <p className="font-light text-xs lg:text-base text-light-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam mollis turpis at euismod molestie. Etiam vitae
-                    euismod nisi. Pellentesque a dolor diam. Nulla facilisi.
-                    Nullam neque quam, tempor at nibh in, accumsan sollicitudin
-                    nisi. Pellentesque nec sem at velit facilisis tristique. In
-                    hac habitasse plated dictumst. Proin finibus tellus nulla,
-                    in bibendum ex scelerisque sed. Etiam malesuada purus eget
-                    commodo sagittis. Vestibulum semper fermentum tristique. Sed
-                    malesuada ex eget fells eleifend rutrum. Integer augue elit,
-                    consectetur a nisi vulputate, mattis ornare fells.
-                  </p>
-                  <p className="mt-6 ont-light text-xs lg:text-base text-light-white">
-                    Maecenas porta id augue at cursus. Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Etiam varius quam non
-                    ipsum malesuada, eget mollis risus dapibus. Nullam ut
-                    malesuada dui, ac aliquam nulla. Cras ultrices nisi at eros
-                    consectetur, in rutrum metus interdum. Praesent aliquet
-                    ipsum ante, vitae commodo arcu maximus ornare. Ut quis
-                    malesuada urna. Quisque ac odio sed purus blandit fringilla.
-                    Etiam euismod tincidunt libero sed laoreet. Praesent tempor
-                    ex nec ullamcorper fringilla. Integer euismod tempus
-                    eleifend. Suspendisse pulvinar pharetra metus, in
-                    condimentum sem. Nunc
-                  </p>
-                </div>
-              </section>
+              <div id="plateforms" className="mt-[80px] lg:mt-[150px]">
+                <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
+                  Actual business results
+                </h1>
+                <p className="font-light text-xs lg:text-base text-light-white">
+                  Our priority is real-world business results, not just
+                  theoretical reach. Our unwavering commitment is to bolster
+                  brands by achieving tangible outcomes. We accomplish this
+                  through an intensive understanding of, and respect for, the
+                  platforms where consumers invest their time. We've developed
+                  contemporary strategies for planning, purchasing, and
+                  analytics designed to prompt consumer action.
+                </p>
+                <p className="mt-6 ont-light text-xs lg:text-base text-light-white">
+                  Our focus is on understanding and maximizing consumer
+                  attention, ensuring content relevance, and delivering
+                  demonstrable results.
+                </p>
+              </div>
+              <div id="stretgy" className="mt-[80px] lg:mt-[150px]">
+                <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
+                  People are our priority
+                </h1>
+                <p className="font-light text-xs lg:text-base text-light-white">
+                  We place individuals at the center of all our endeavors,
+                  guaranteeing that our concepts and strategies are culturally
+                  diverse and consumer-oriented. We tackle strategy with a
+                  pragmatic, humble, and empathetic mindset. We're convinced
+                  that, in today's world, brands can't simply depend on one
+                  generic message aimed at a large audience. The most potent way
+                  to foster relevance and growth is to communicate uniquely and
+                  specifically to individuals, based on their identity, through
+                  active listening and understanding.
+                </p>
+              </div>
+              <div id="guidance" className="mt-[80px] lg:mt-[150px]">
+                <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
+                  Tap into our intellect
+                </h1>
+                <p className="font-light text-xs lg:text-base text-light-white">
+                  Submerge yourself in the present scenario of consumer
+                  attention and delve into budding cultural aspects to grasp a
+                  comprehensive understanding of how to foster relevance in the
+                  contemporary landscape. Collaborate with some of the most
+                  experienced, forward-thinking, and consumer-focused
+                  strategists, creators, and media platform experts in the
+                  business to unveil modern solutions for your most pressing
+                  challenges. You'll leave equipped with a multitude of
+                  implementable ideas ready for the market and a sturdy,
+                  strategic plan to maintain your brand's relevance among a wide
+                  range of consumers.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -216,5 +161,4 @@ const Services = () => {
     </div>
   );
 };
-
 export default Services;

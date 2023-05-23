@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/images/header-logo.png";
 import flag from "../assets/images/flag.png";
+import french from "../assets/images/french.png";
 
 const NavbarHomepage = () => {
   const [navbar, setNavbar] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("eng");
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsOpen(false);
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+    closeDropdown();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,8 +124,87 @@ const NavbarHomepage = () => {
                   </li>
                   <li className="border-r border-white h-[14px] pl-4"></li>
                   <li className="flex items-center justify-center gap-x-4 ml-8">
-                    <span>eng</span>
-                    <img src={flag} alt="flag" width="25px" />
+                    <div className="relative inline-block text-left">
+                      <div>
+                        <button
+                          type="button"
+                          className="flex justify-center items-center uppercase text-[14px]"
+                          id="menu-button"
+                          aria-expanded={isOpen ? "true" : "false"}
+                          aria-haspopup="true"
+                          onClick={toggleDropdown}
+                        >
+                          {selectedOption === "eng" ? (
+                            <div className="flex justify-center items-center gap-x-4">
+                              Eng <img src={flag} alt="flag" width="25px" />
+                            </div>
+                          ) : (
+                            <div className="flex items-center gap-x-7">
+                              FR
+                              <img
+                                src={french}
+                                alt="flag"
+                                width="25px"
+                                className="rounded-full"
+                              />
+                            </div>
+                          )}
+                          <svg
+                            className={`-mr-1 ml-2 h-5 w-5 ${
+                              isOpen ? "transform rotate-180" : ""
+                            }`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path fillRule="evenodd" d="M10 14l6-6H4z" />
+                          </svg>
+                        </button>
+                      </div>
+                      {isOpen && (
+                        <div
+                          className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                          role="menu"
+                          aria-orientation="vertical"
+                          aria-labelledby="menu-button"
+                          tabIndex="-1"
+                        >
+                          <div className="py-1" role="none">
+                            <div
+                              href="#"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                              role="menuitem"
+                              tabIndex="-1"
+                              id="menu-item-0"
+                              onClick={() => handleOptionSelect("eng")}
+                            >
+                              <div className="flex items-center gap-x-4">
+                                Eng <img src={flag} alt="flag" width="25px" />
+                              </div>
+                            </div>
+                            <div
+                              href="#"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                              role="menuitem"
+                              tabIndex="-1"
+                              id="menu-item-1"
+                              onClick={() => handleOptionSelect("fr")}
+                            >
+                              <div className="flex items-center gap-x-7">
+                                FR
+                                <img
+                                  src={french}
+                                  alt="flag"
+                                  width="25px"
+                                  className="rounded-full"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -204,8 +299,87 @@ const NavbarHomepage = () => {
                     </li>
                     <li className="border-b border-white w-[20px]"></li>
                     <li className="flex items-center justify-center gap-x-4">
-                      <span>eng</span>
-                      <img src={flag} alt="flag" width="25px" />
+                      <div className="relative inline-block text-left">
+                        <div>
+                          <button
+                            type="button"
+                            className="flex justify-center items-center uppercase text-[14px]"
+                            id="menu-button"
+                            aria-expanded={isOpen ? "true" : "false"}
+                            aria-haspopup="true"
+                            onClick={toggleDropdown}
+                          >
+                            {selectedOption === "eng" ? (
+                              <div className="flex justify-center items-center gap-x-4">
+                                Eng <img src={flag} alt="flag" width="25px" />
+                              </div>
+                            ) : (
+                              <div className="flex items-center gap-x-7">
+                                FR
+                                <img
+                                  src={french}
+                                  alt="flag"
+                                  width="25px"
+                                  className="rounded-full"
+                                />
+                              </div>
+                            )}
+                            <svg
+                              className={`-mr-1 ml-2 h-5 w-5 ${
+                                isOpen ? "transform rotate-180" : ""
+                              }`}
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              aria-hidden="true"
+                            >
+                              <path fillRule="evenodd" d="M10 14l6-6H4z" />
+                            </svg>
+                          </button>
+                        </div>
+                        {isOpen && (
+                          <div
+                            className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                            role="menu"
+                            aria-orientation="vertical"
+                            aria-labelledby="menu-button"
+                            tabIndex="-1"
+                          >
+                            <div className="py-1" role="none">
+                              <div
+                                href="#"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem"
+                                tabIndex="-1"
+                                id="menu-item-0"
+                                onClick={() => handleOptionSelect("eng")}
+                              >
+                                <div className="flex items-center gap-x-4">
+                                  Eng <img src={flag} alt="flag" width="25px" />
+                                </div>
+                              </div>
+                              <div
+                                href="#"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem"
+                                tabIndex="-1"
+                                id="menu-item-1"
+                                onClick={() => handleOptionSelect("fr")}
+                              >
+                                <div className="flex items-center gap-x-7">
+                                  FR
+                                  <img
+                                    src={french}
+                                    alt="flag"
+                                    width="25px"
+                                    className="rounded-full"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </li>
                   </ul>
                 </div>
