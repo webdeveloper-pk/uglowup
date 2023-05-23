@@ -70,8 +70,7 @@ const SimpleSlider = ({ selectedLanguage }) => {
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
-            JOE BLOGGS |
-            <span className="pl-2 text-light-green">CEO PUBLICIS</span>
+            <span className="text-light-green uppercase">Snickers</span>
           </p>
         </div>
         <div className="md:px-4">
@@ -97,8 +96,7 @@ const SimpleSlider = ({ selectedLanguage }) => {
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
-            JOE BLOGGS |
-            <span className="pl-2 text-light-green">CEO PUBLICIS</span>
+            <span className="text-light-green uppercase">Snickers</span>
           </p>
         </div>
         <div className="md:px-4">
@@ -124,8 +122,7 @@ const SimpleSlider = ({ selectedLanguage }) => {
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
-            JOE BLOGGS |
-            <span className="pl-2 text-light-green">CEO PUBLICIS</span>
+            <span className="text-light-green uppercase">Snickers</span>
           </p>
         </div>
         <div className="md:px-4">
@@ -151,8 +148,7 @@ const SimpleSlider = ({ selectedLanguage }) => {
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
-            JOE BLOGGS |
-            <span className="pl-2 text-light-green">CEO PUBLICIS</span>
+            <span className="text-light-green uppercase">Snickers</span>
           </p>
         </div>
         <div className="md:px-4">
@@ -178,8 +174,7 @@ const SimpleSlider = ({ selectedLanguage }) => {
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
-            JOE BLOGGS |
-            <span className="pl-2 text-light-green">CEO PUBLICIS</span>
+            <span className="text-light-green uppercase">Snickers</span>
           </p>
         </div>
       </Slider>
