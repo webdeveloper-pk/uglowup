@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
+const ContactStep3 = ({
+  onNextStep,
+  onBackStep,
+  email,
+  phone,
+  value,
+  selectedLanguage,
+}) => {
   const [checkboxValues, setCheckboxValues] = useState({
     agencyservice: false,
     career: false,
@@ -82,16 +89,21 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
         id="contact"
       >
         <div className="flex flex-row justify-center text-center text-light-green text-3xl md:text-4xl lg:text-[40px] uppercase mb-12 md:mb-16">
-          <h1 classNmae="uppercase">contact us</h1>
+          <h1 classNmae="uppercase">
+            {selectedLanguage === "eng" ? "contact us" : "Contactez-nous"}
+          </h1>
         </div>
         <div class="mb-6 h-1 w-full bg-lighter-white">
           <div class="h-1 bg-light-green w-[100%]"></div>
           <p className="text-left uppercase mt-2 text-lighter-white">
-            progress
+            {selectedLanguage === "eng" ? "progress" : "progrès"}
           </p>
         </div>
         <p className="w-[100%] md:w-[90%] xl:w-[60%] mx-auto text-base md:text-[18px] text-light-white mb-6 mt-12">
-          <span className="pr-6">4.</span>What can we help you with?
+          <span className="pr-6">4.</span>
+          {selectedLanguage === "eng"
+            ? "What can we help you with?"
+            : "En quoi pouvons-nous vous aider?"}
           <span className="pl-4">*</span>
         </p>
         <form>
@@ -108,7 +120,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 style={getCheckboxStyle(checkboxValues.agencyservice)}
                 id="myCheckbox"
               />
-              <span className="pl-3">Agency Services</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "Agency Services"
+                  : "Services d'agence?"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -120,7 +136,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.vendors}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">Vendors & Partnerships</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "Vendors & Partnerships"
+                  : "Fournisseurs et partenariats"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -132,7 +152,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.media}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">Media or Press</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "Media or Press"
+                  : "Médias ou Presse"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -144,7 +168,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.career}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">Career Opportunities</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "Career Opportunities"
+                  : "Opportunités de carrière"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -156,7 +184,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.metaliica}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">I love Metaliica</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "I love Metaliica"
+                  : "J'aime Metalica"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -168,7 +200,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.influencer}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">Influencer Services</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "Influencer Services"
+                  : "Services d'influence"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -180,7 +216,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.eCommerce}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">eCommerce / DT</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "eCommerce / DT"
+                  : "commerce électronique / DT"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -192,7 +232,11 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.brand}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">Personal Branding</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng"
+                  ? "Personal Branding"
+                  : "Image de marque personnelle"}
+              </span>
             </label>
             <label
               className="text-light-green border border-light-green p-3"
@@ -204,7 +248,9 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
                 checked={checkboxValues.other}
                 onChange={handleCheckboxChange}
               />
-              <span className="pl-3">Other</span>
+              <span className="pl-3">
+                {selectedLanguage === "eng" ? "Other" : "Autre"}
+              </span>
             </label>
           </div>
 
@@ -213,13 +259,13 @@ const ContactStep3 = ({ onNextStep, onBackStep, email, phone, value }) => {
               onClick={(event) => onBackStep(event)}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
-              back
+              {selectedLanguage === "eng" ? "back" : "dos"}
             </button>
             <button
               onClick={onSubmitdata}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
-              next
+              {selectedLanguage === "eng" ? "start" : "commencer"}
             </button>
           </div>
         </form>

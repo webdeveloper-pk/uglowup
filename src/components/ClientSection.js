@@ -20,16 +20,22 @@ import nestle from "../assets/images/nestle.png";
 import power from "../assets/images/power.png";
 import snickers from "../assets/images/snickers.png";
 
-const ClientSection = () => {
+const ClientSection = ({ selectedLanguage }) => {
   return (
     <div className="bg-light-white">
       <div className="text-light-black px-6 md:px-12 lg:px-16 py-12 md:py-24 homepage-container mx-auto">
         <div className="flex flex-row justify-center text-center text-3xl md:text-4xl lg:text-[40px] uppercase">
           <h1 classNmae="uppercase">
-            We’re grateful to work with
+            {selectedLanguage === "eng"
+              ? "We’re grateful to work with"
+              : "Nous sommes reconnaissants de travailler avec"}
             <br />
             <div className="mt-0 md:mt-2">
-              <em className="animated">incredible clients.</em>
+              <em className="animated">
+                {selectedLanguage === "eng"
+                  ? "incredible clients."
+                  : "clients incroyables."}
+              </em>
             </div>
           </h1>
         </div>

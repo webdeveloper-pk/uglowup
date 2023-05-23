@@ -5,7 +5,7 @@ import "./slick-theme.css";
 import testimonial1 from "../../assets/images/testimonial1.png";
 // import testimonial2 from "../../assets/images/testimonial2.png";
 
-const SimpleSlider = () => {
+const SimpleSlider = ({ selectedLanguage }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -64,9 +64,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              This team has exceeded expectations, transforming our marketing
-              strategy and delivering remarkable results. Their understanding of
-              our audience is exceptional.
+              {selectedLanguage === "eng"
+                ? "This team has exceeded expectations, transforming our marketing strategy and delivering remarkable results. Their understanding of our audience is exceptional."
+                : "Cette équipe a dépassé les attentes, transformant notre stratégie marketing et livrant des résultats remarquables. Leur compréhension de notre public est exceptionnelle."}
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -91,9 +91,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              This team has exceeded expectations, transforming our marketing
-              strategy and delivering remarkable results. Their understanding of
-              our audience is exceptional.
+              {selectedLanguage === "eng"
+                ? "This team has exceeded expectations, transforming our marketing strategy and delivering remarkable results. Their understanding of our audience is exceptional."
+                : "Cette équipe a dépassé les attentes, transformant notre stratégie marketing et livrant des résultats remarquables. Leur compréhension de notre public est exceptionnelle."}
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -118,9 +118,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              This team has exceeded expectations, transforming our marketing
-              strategy and delivering remarkable results. Their understanding of
-              our audience is exceptional.
+              {selectedLanguage === "eng"
+                ? "This team has exceeded expectations, transforming our marketing strategy and delivering remarkable results. Their understanding of our audience is exceptional."
+                : "Cette équipe a dépassé les attentes, transformant notre stratégie marketing et livrant des résultats remarquables. Leur compréhension de notre public est exceptionnelle."}
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -145,9 +145,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              This team has exceeded expectations, transforming our marketing
-              strategy and delivering remarkable results. Their understanding of
-              our audience is exceptional.
+              {selectedLanguage === "eng"
+                ? "This team has exceeded expectations, transforming our marketing strategy and delivering remarkable results. Their understanding of our audience is exceptional."
+                : "Cette équipe a dépassé les attentes, transformant notre stratégie marketing et livrant des résultats remarquables. Leur compréhension de notre public est exceptionnelle."}
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">
@@ -172,9 +172,9 @@ const SimpleSlider = () => {
           >
             <p className="text-base md:text-[22px] -mt-[100px] md:-mt-[130px] mb-[20px] md:mb-[60px]">
               <p className="text-[50px] md:text-[70px]">“</p>
-              This team has exceeded expectations, transforming our marketing
-              strategy and delivering remarkable results. Their understanding of
-              our audience is exceptional.
+              {selectedLanguage === "eng"
+                ? "This team has exceeded expectations, transforming our marketing strategy and delivering remarkable results. Their understanding of our audience is exceptional."
+                : "Cette équipe a dépassé les attentes, transformant notre stratégie marketing et livrant des résultats remarquables. Leur compréhension de notre public est exceptionnelle."}
             </p>
           </div>
           <p className="text-lg md:text-[24px] text-light-white lg:ml-8">

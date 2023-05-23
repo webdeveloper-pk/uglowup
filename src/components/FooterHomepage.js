@@ -2,7 +2,7 @@ import React from "react";
 import line from "../assets/images/line.png";
 import logo from "../assets/images/header-logo.png";
 
-const Footer = () => {
+const Footer = ({ selectedLanguage }) => {
   return (
     <>
       <div className="">
@@ -19,18 +19,28 @@ const Footer = () => {
                 <img src={logo} alt="logo" className="w-[180px] h-auto" />
               </div>
               <div>
-                <p>Email: support@uglowup.com</p>
-                <p>WhatsApp: +44 0123456789</p>
+                <p>
+                  {selectedLanguage === "eng" ? "Email" : "E-mail"}:
+                  support@uglowup.com
+                </p>
+                <p>
+                  {selectedLanguage === "eng" ? "WhatsApp" : "WhatsApp"} : +44
+                  0123456789
+                </p>
               </div>
               <ul>
                 <li className="hover:text-light-green hover:cursor-pointer">
-                  Contact Options
+                  {selectedLanguage === "eng"
+                    ? "Contact Options"
+                    : "Options de contact"}
                 </li>
                 <li className="hover:text-light-green hover:cursor-pointer">
-                  Privacy Policy
+                  {selectedLanguage === "eng"
+                    ? "Privacy Policy"
+                    : "Politique de confidentialité"}
                 </li>
                 <li className="hover:text-light-green hover:cursor-pointer">
-                  Cookies
+                  {selectedLanguage === "eng" ? "Cookies" : "Cookies"}
                 </li>
               </ul>
             </div>

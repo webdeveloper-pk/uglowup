@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-const ContactStep6 = ({ onNextStep, onBackStep, email, onPhoneChange }) => {
+const ContactStep6 = ({
+  onNextStep,
+  onBackStep,
+  email,
+  onPhoneChange,
+  selectedLanguage,
+}) => {
   const [phone, setPhone] = useState("");
 
   const handleChange = (event) => {
@@ -20,23 +26,30 @@ const ContactStep6 = ({ onNextStep, onBackStep, email, onPhoneChange }) => {
         id="contact"
       >
         <div className="flex flex-row justify-center text-center text-light-green text-3xl md:text-4xl lg:text-[40px] uppercase mb-12 md:mb-16">
-          <h1 classNmae="uppercase">contact us</h1>
+          <h1 classNmae="uppercase">
+            {selectedLanguage === "eng" ? "contact us" : "Contactez-nous"}
+          </h1>
         </div>
         <div class="mb-6 h-1 w-full bg-lighter-white">
           <div class="h-1 bg-light-green w-[50%]"></div>
           <p className="text-left uppercase mt-2 text-lighter-white">
-            progress
+            {selectedLanguage === "eng" ? "progress" : "progrès"}
           </p>
         </div>
         <div className="text-center mt-12">
           <p className="w-[100%] mx-auto text-base md:text-[20px] text-light-white">
-            <span className="pr-6">2.</span>Enter your contact no.{" "}
+            <span className="pr-6">2.</span>
+            {selectedLanguage === "eng"
+              ? "Enter your contact no."
+              : "Entrez votre n° de contact."}
             <span className="pl-2">*</span>
           </p>
         </div>
         <form className="mt-10">
           <input
-            placeholder="Contact no here"
+            placeholder={
+              selectedLanguage === "eng" ? "Contact no here" : "Contact non ici"
+            }
             className="w-[100%] md:w-[350px] md:w-[400px] custom-input"
             value={phone}
             onChange={handleChange}
@@ -46,13 +59,13 @@ const ContactStep6 = ({ onNextStep, onBackStep, email, onPhoneChange }) => {
               onClick={(event) => onBackStep(event)}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
-              back
+              {selectedLanguage === "eng" ? "back" : "dos"}
             </button>
             <button
               onClick={(event) => handleNextStep(event)}
               className="text-base md:text-[24px] text-light-green bg-transparent hover:bg-light-green hover:text-light-black border border-light-green uppercase rounded-full px-10 md:px-12 py-2.5 md:py-3"
             >
-              next
+              {selectedLanguage === "eng" ? "start" : "commencer"}
             </button>
           </div>
         </form>

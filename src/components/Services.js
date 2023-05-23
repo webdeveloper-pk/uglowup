@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import plus from "../assets/images/crossline.png";
 
-const Services = () => {
+const Services = ({ selectedLanguage }) => {
   const [activeMenuItem, setActiveMenuItem] = useState("");
 
   useEffect(() => {
@@ -59,15 +59,15 @@ const Services = () => {
                   activeMenuItem === "innovations" ? "active" : ""
                 }`}
               >
-                innovations
+                {selectedLanguage === "eng" ? "innovations" : "nouveautés"}
               </a>
               <a
                 href="#plateforms"
                 className={`sidebar-heading ${
-                  activeMenuItem === "plateforms" ? "active" : ""
+                  activeMenuItem === "Platforms" ? "active" : ""
                 }`}
               >
-                plateforms
+                {selectedLanguage === "eng" ? "plateforms" : "plates-formes"}
               </a>
               <a
                 href="#stretgy"
@@ -75,7 +75,7 @@ const Services = () => {
                   activeMenuItem === "strategy" ? "active" : ""
                 }`}
               >
-                strategy
+                {selectedLanguage === "eng" ? "strategy" : "stratégie"}
               </a>
               <a
                 href="#guidance"
@@ -83,75 +83,61 @@ const Services = () => {
                   activeMenuItem === "guidance" ? "active" : ""
                 }`}
               >
-                guidance
+                {selectedLanguage === "eng" ? "guidance" : "conseils"}
               </a>
             </div>
             <div className="h-[400px] overflow-auto lg:pr-12 xl:pr-32">
               <div id="innovations">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6 ">
-                  Unleashing the power of curiosity
+                  {selectedLanguage === "eng"
+                    ? "Unleashing the power of curiosity"
+                    : "Libérer le pouvoir de la curiosité"}
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
-                  We've become a potent narrative platform that puts the
-                  consumer at the heart of our storytelling. We harness the full
-                  strength of our collective creativity, including both client
-                  and agency, to discern what resonates with the consumers
-                  rather than relying on speculation or personal bias. The
-                  outcome? Impactful, effective creatives that are driven by
-                  consumer insights.
+                  {selectedLanguage === "eng"
+                    ? "We have become a potent narrative platform that puts the consumer at the heart of our storytelling. We harness the full strength of our collective creativity, including both client and agency, to discern what resonates with the consumers rather than relying on speculation or personal bias. The outcome? Impactful, effective creatives that are driven by consumer insights."
+                    : "Nous sommes devenus une plateforme narrative puissante qui place le consommateur au cœur de notre narration. Nous exploitons toute la force de notre créativité collective, y compris le client et l'agence, pour discerner ce qui résonne avec les consommateurs plutôt que de nous fier à la spéculation ou aux préjugés personnels. Le résultat? Des créations percutantes et efficaces basées sur les connaissances des consommateurs."}
                 </p>
               </div>
               <div id="plateforms" className="mt-[80px] lg:mt-[150px]">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                  Actual business results
+                  {selectedLanguage === "eng"
+                    ? "Actual business results"
+                    : "Résultats réels de l'entreprise"}
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
-                  Our priority is real-world business results, not just
-                  theoretical reach. Our unwavering commitment is to bolster
-                  brands by achieving tangible outcomes. We accomplish this
-                  through an intensive understanding of, and respect for, the
-                  platforms where consumers invest their time. We've developed
-                  contemporary strategies for planning, purchasing, and
-                  analytics designed to prompt consumer action.
+                  {selectedLanguage === "eng"
+                    ? "Our priority is real-world business results, not just theoretical reach. Our unwavering commitment is to bolster brands by achieving tangible outcomes. We accomplish this through an intensive understanding of, and respect for, the platforms where consumers invest their time. We've developed contemporary strategies for planning, purchasing, and analytics designed to prompt consumer action."
+                    : "Notre priorité est les résultats commerciaux réels, pas seulement la portée théorique. Notre engagement inébranlable est de renforcer les marques en obtenant des résultats tangibles. Nous y parvenons grâce à une compréhension approfondie et au respect des plateformes sur lesquelles les consommateurs investissent leur temps. Nous avons développé des stratégies contemporaines de planification, d'achat et d'analyse conçues pour inciter les consommateurs à agir."}
                 </p>
                 <p className="mt-6 ont-light text-xs lg:text-base text-light-white">
-                  Our focus is on understanding and maximizing consumer
-                  attention, ensuring content relevance, and delivering
-                  demonstrable results.
+                  {selectedLanguage === "eng"
+                    ? " Our focus is on understanding and maximizing consumer  attention, ensuring content relevance, and delivering demonstrable results."
+                    : "Notre objectif est de comprendre et de maximiser l'attention des consommateurs, d'assurer la pertinence du contenu et de fournir des résultats démontrables."}
                 </p>
               </div>
               <div id="stretgy" className="mt-[80px] lg:mt-[150px]">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                  People are our priority
+                  {selectedLanguage === "eng"
+                    ? "People are our priority"
+                    : "Les gens sont notre priorité"}
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
-                  We place individuals at the center of all our endeavors,
-                  guaranteeing that our concepts and strategies are culturally
-                  diverse and consumer-oriented. We tackle strategy with a
-                  pragmatic, humble, and empathetic mindset. We're convinced
-                  that, in today's world, brands can't simply depend on one
-                  generic message aimed at a large audience. The most potent way
-                  to foster relevance and growth is to communicate uniquely and
-                  specifically to individuals, based on their identity, through
-                  active listening and understanding.
+                  {selectedLanguage === "eng"
+                    ? "We place individuals at the center of all our endeavors, guaranteeing that our concepts and strategies are culturally diverse and consumer-oriented. We tackle strategy with a pragmatic, humble, and empathetic mindset. We're convinced that, in today's world, brands can't simply depend on one generic message aimed at a large audience. The most potent way to foster relevance and growth is to communicate uniquely and specifically to individuals, based on their identity, through active listening and understanding."
+                    : "Nous plaçons les individus au centre de tous nos efforts, garantissant que nos concepts et stratégies sont culturellement diversifiés et orientés vers le consommateur. Nous abordons la stratégie avec un état d'esprit pragmatique, humble et empathique. Nous sommes convaincus que, dans le monde d'aujourd'hui, les marques ne peuvent pas se contenter d'un message générique destiné à un large public. Le moyen le plus puissant de favoriser la pertinence et la croissance est de communiquer de manière unique et spécifique avec les individus, en fonction de leur identité, par le biais d'une écoute et d'une compréhension actives."}
                 </p>
               </div>
               <div id="guidance" className="mt-[80px] lg:mt-[150px]">
                 <h1 className="uppercase text-[16px] lg:text-[22px] font-bold mb-6">
-                  Tap into our intellect
+                  {selectedLanguage === "eng"
+                    ? "Tap into our intellect"
+                    : "Puisez dans notre intellect"}
                 </h1>
                 <p className="font-light text-xs lg:text-base text-light-white">
-                  Submerge yourself in the present scenario of consumer
-                  attention and delve into budding cultural aspects to grasp a
-                  comprehensive understanding of how to foster relevance in the
-                  contemporary landscape. Collaborate with some of the most
-                  experienced, forward-thinking, and consumer-focused
-                  strategists, creators, and media platform experts in the
-                  business to unveil modern solutions for your most pressing
-                  challenges. You'll leave equipped with a multitude of
-                  implementable ideas ready for the market and a sturdy,
-                  strategic plan to maintain your brand's relevance among a wide
-                  range of consumers.
+                  {selectedLanguage === "eng"
+                    ? "Submerge yourself in the present scenario of consumer attention and delve into budding cultural aspects to grasp a comprehensive understanding of how to foster relevance in the contemporary landscape. Collaborate with some of the most experienced, forward-thinking, and consumer-focused strategists, creators, and media platform experts in the business to unveil modern solutions for your most pressing challenges. You'll leave equipped with a multitude of implementable ideas ready for the market and a sturdy, strategic plan to maintain your brand's relevance among a wide range of consumers."
+                    : "Plongez-vous dans le scénario actuel de l'attention des consommateurs et plongez dans les aspects culturels naissants pour saisir une compréhension globale de la façon de favoriser la pertinence dans le paysage contemporain. Collaborez avec certains des stratèges, créateurs et experts des plateformes multimédias les plus expérimentés, avant-gardistes et axés sur le consommateur du secteur pour dévoiler des solutions modernes à vos défis les plus pressants. Vous repartirez équipé d'une multitude d'idées réalisables prêtes pour le marché et d'un plan stratégique solide pour maintenir la pertinence de votre marque auprès d'un large éventail de consommateurs."}
                 </p>
               </div>
             </div>

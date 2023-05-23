@@ -6,7 +6,7 @@ import ContactStep4 from "./ContactStep4";
 import ContactStep5 from "./ContactStep5";
 import ContactStep6 from "./ContactStep6";
 
-const Contact = () => {
+const Contact = ({ selectedLanguage }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
@@ -41,12 +41,18 @@ const Contact = () => {
   const renderComponent = () => {
     switch (currentStep) {
       case 1:
-        return <ContactStep1 onNextStep={handleNextStep} />;
+        return (
+          <ContactStep1
+            onNextStep={handleNextStep}
+            selectedLanguage={selectedLanguage}
+          />
+        );
       case 2:
         return (
           <ContactStep5
             onNextStep={handleNextStep}
             onEmailChange={handleEmailChange}
+            selectedLanguage={selectedLanguage}
           />
         );
       case 3:
@@ -56,6 +62,7 @@ const Contact = () => {
             onBackStep={handleBackStep}
             email={email}
             onPhoneChange={handlePhoneChange}
+            selectedLanguage={selectedLanguage}
           />
         );
       case 4:
@@ -66,6 +73,7 @@ const Contact = () => {
             email={email}
             phone={phone}
             onValueChange={handleValueChange}
+            selectedLanguage={selectedLanguage}
           />
         );
       case 5:
@@ -76,10 +84,11 @@ const Contact = () => {
             email={email}
             phone={phone}
             value={value}
+            selectedLanguage={selectedLanguage}
           />
         );
       case 6:
-        return <ContactStep4 />;
+        return <ContactStep4 selectedLanguage={selectedLanguage} />;
       default:
         return null;
     }
